@@ -1,0 +1,410 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2509
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset77 ZapfDingbatsITC;
+}
+{\colortbl;\red255\green255\blue255;\red27\green31\blue34;\red255\green255\blue255;\red21\green23\blue26;
+\red251\green2\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c14118\c16078\c18039;\cssrgb\c100000\c100000\c100000;\cssrgb\c10588\c12157\c13725\c4706;
+\cssrgb\c100000\c14913\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww28600\viewh7760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Lab - Bash\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+Imprime en consola "Hello World".
+\f0\b0 \
+\
+lab-bash git:(lab-bash) echo "hello world"\
+hello world\
+\
+
+\f1\b Crea un directorio nuevo llamado \cb4 new_dir\cb3 .
+\f0\b0 \
+\
+lab-bash git:(lab-bash) mkdir new_dir\
+lab-bash git:(lab-bash) ls\
+README.md  exercices  inputs     lorem      lorem-copy new_dir    outputs\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\b \cf2 Elimina ese directorio.
+\f0\b0 \
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf2 lab-bash git:(lab-bash) rmdir new_dir\
+lab-bash git:(lab-bash) ls\
+README.md  exercices  inputs     lorem      lorem-copy outputs\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0
+\f1\b \cf2 \cb3 Copia el archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem a la carpeta lorem-copy.
+\f0\b0 \
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \kerning1\expnd0\expndtw0 \
+lab-bash git:(lab-bash) cd lorem\
+lorem git:(lab-bash) ls\
+at.txt    lorem.txt sed.txt\
+lorem git:(lab-bash) cp sed.txt sedcopy.txt\
+lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  ls\
+at.txt      lorem.txt   sed.txt     sedcopy.txt\
+lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  mv sedcopy.txt ../lorem-copy/sec.txt\
+lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  pwd\
+/Users/eghm/documents/ironhack/datamex1019/module-1/lab-bash/lorem\
+lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cd ..\
+lab-bash git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  pwd\
+/Users/eghm/documents/ironhack/datamex1019/module-1/lab-bash\
+lab-bash git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cd lorem-copy\
+lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  ls\
+sec.txt\
+lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  mv sec.txt sed.txt\
+lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  ls\
+sed.txt\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0
+\f1\b \cf2 \expnd0\expndtw0\kerning0
+Copia los otros dos archivos de la carpeta lorem a la carpeta lorem-copy en una sola linea mediante el pipe \cb4 ;\cb3 .
+\f0\b0 \
+\
+lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cp at.txt ../lorem-copy/at.txt | cp lorem.txt ../lorem-copy/lorem.txt\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Muestra el contenido del archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem.
+\f0\b0 \
+\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cat sed.txt\
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,\
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,\
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,\
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,\
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?%\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Muestra el contenido de los archivos \cb4 at.txt\cb3  y \cb4 lorem.txt\cb3  dentro de la carpeta lorem.
+\f0\b0 \
+\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cat at.txt\
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum\
+deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non\
+provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.\
+Et harum quidem rerum facilis est et expedita distinctio.\
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod\
+maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.\
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet\
+ut et voluptates repudiandae sint et molestiae non recusandae.\
+Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores\
+alias consequatur aut perferendis doloribus asperiores repellat\
+\
+
+\f2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cat lorem.txt\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.%\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Visualiza las primeras 3 linas del archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem-copy\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  head -3 sed.txt\
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Visualiza las ultimas 3 linas del archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem-copy\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  tail -3 sed.txt\
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,\
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,\
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?%\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 A\'f1ade \cb4 Homo homini lupus.\cb3  al final de archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem-copy.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  echo 'Homo homini lupus.' >> sed.txt\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Visualiza las \'faltimas 3 linas del archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem-copy. Deber\'edas ver ahora \cb4 Homo homini lupus.\cb3 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  tail -3  sed.txt\
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,\
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,\
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus.\
+\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 Sustituye todas las apariciones de \cb4 et\cb3  por \cb4 ET\cb3  del archivo \cb4 at.txt\cb3  dentro de la carpeta lorem a la carpeta lorem-copy. Deber\'e1s usar \cb4 sed\cb3 .\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  sed 's/et/ET/g' at.txt > ../lorem-copy/at.txt\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Encuentra al usuario activo en el sistema.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lab-bash git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  id -un\
+eghm\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Encuentra d\'f3nde est\'e1s en tu sistema de ficheros.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lab-bash git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  pwd\
+/Users/eghm/documents/ironhack/datamex1019/module-1/lab-bash\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Lista los archivos que terminan por \cb4 .txt\cb3  en la carpeta lorem.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  ls *.txt\
+at.txt    lorem.txt sed.txt\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Cuenta el n\'famero de lineas que tiene el archivo \cb4 sed.txt\cb3  dentro de la carpeta lorem. Tendr\'e1s que encadenar \cb4 cat\cb3  y \cb4 wc\cb3  mediante el pipe \cb4 |\cb3 .\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  cat -b sed.txt\
+     1	Sed ut precipitas unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\
+     2	totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\
+     3	Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,\
+     4	sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\
+     5	Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,\
+     6	sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.\
+     7	Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,\
+     8	nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,\
+     9	vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?%\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Cuenta el n\'famero de archivos que empiezan por \cb4 lorem\cb3  que est\'e1n en este directorio y en directorios internos\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lab-bash git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  find lorem* -type f | wc -l\
+       7\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Encuentra todas las apariciones de \cb4 et\cb3  en \cb4 at.txt\cb3  dentro de la carpeta lorem.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  grep "et" at.txt\
+At vero eos 
+\f1\b \cf5 et
+\f0\b0 \cf2  accusamus 
+\f1\b \cf5 et
+\f0\b0 \cf2  iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum\
+deleniti atque corrupti quos dolores 
+\f1\b \cf5 et
+\f0\b0 \cf2  quas molestias excepturi sint occaecati cupiditate non\
+provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum 
+\f1\b \cf5 et
+\f0\b0 \cf2  dolorum fuga.\
+Et harum quidem rerum facilis est 
+\f1\b \cf5 et
+\f0\b0 \cf2  expedita distinctio.\
+Temporibus autem quibusdam 
+\f1\b \cf5 et
+\f0\b0 \cf2  aut officiis debitis aut rerum necessitatibus saepe eveni
+\f1\b \cf5 et
+\f0\b0 \cf2 \
+ut 
+\f1\b \cf5 et
+\f0\b0 \cf2  voluptates repudiandae sint 
+\f1\b \cf5 et
+\f0\b0 \cf2  molestiae non recusandae.\
+Itaque earum rerum hic ten
+\f1\b \cf5 et
+\f0\b0 \cf2 ur a sapiente delectus, ut aut reiciendis voluptatibus maiores\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \cb1 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Cuenta el n\'famero de apariciones del string \cb4 et\cb3  en \cb4 at.txt\cb3  dentro de la carpeta lorem. Para ello debes obtener s\'f3lo los string buscados y contar las lineas.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  grep -o 'et' at.txt | wc -l\
+      10\cb1 \
+\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Cuenta el n\'famero de apariciones del string \cb4 et\cb3  en todos los archivos del directorio lorem-copy.\
+\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2\b0 \cf2 \uc0\u10140 
+\f1\b   
+\f0\b0 lorem-copy git:(lab-bash)
+\f1\b  
+\f2\b0 \uc0\u10007 
+\f1\b  
+\f0\b0 grep -wi "et" ./*
+\f1\b \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b0 \cf2 ./at.txt:At vero eos ET accusamus ET iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum\
+./at.txt:deleniti atque corrupti quos dolores ET quas molestias excepturi sint occaecati cupiditate non\
+./at.txt:provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum ET dolorum fuga.\
+./at.txt:Et harum quidem rerum facilis est ET expedita distinctio.\
+./at.txt:Temporibus autem quibusdam ET aut officiis debitis aut rerum necessitatibus saepe eveniET\
+./at.txt:ut ET voluptates repudiandae sint ET molestiae non recusandae.\
+./lorem.txt:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\
+./sed.txt:totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+\f1\b \
+
+\f0\b0 ./sed.txt:sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+\f1\b \
+
+\f0\b0 \
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f2 \cf2 \uc0\u10140 
+\f0   lorem-copy git:(lab-bash) 
+\f2 \uc0\u10007 
+\f0  grep -wi "et" ./* | wc -l\
+       9\
+\
+# solo logr\'e9 que me contar\'e1 las lineas, no el n\'famero de strings \'93et\'94, que son 12.}
