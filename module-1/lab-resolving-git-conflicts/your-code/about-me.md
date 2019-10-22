@@ -1,7 +1,10 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra laoreet lorem et dapibus. Integer auctor dignissim egestas. Ut id purus neque. Pellentesque imperdiet lacus in libero laoreet, at tempus felis tristique. Cras fermentum erat a dui vulputate gravida. Nulla aliquet nisi interdum nulla pretium, ac vestibulum diam congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus lacus risus, sodales vitae viverra quis, maximus ac ipsum. Sed consequat viverra mattis. Curabitur iaculis varius mollis.
+# Who am I
+I'm Ernesto Gabriel Hernández Montoya
 
-Ut porttitor iaculis tellus bibendum euismod. Morbi porta, ante nec tempus porta, felis mi faucibus lacus, sed tristique purus nunc sed est. Aenean pulvinar urna ut lacus interdum aliquam. Pellentesque sit amet magna accumsan, sagittis metus a, volutpat velit. Mauris vitae ex vehicula, posuere nisi sed, sagittis nunc. Ut scelerisque, mi non tristique tristique, mi enim luctus nunc, eu mattis sem quam auctor nunc. Donec lobortis tellus eget blandit ultricies. Vivamus euismod metus eget leo blandit, at malesuada magna efficitur. Praesent sodales faucibus mi, ullamcorper ultrices orci. Vivamus maximus malesuada massa, nec placerat leo feugiat vel. Nam vitae eleifend enim. Nullam interdum ipsum velit, vitae faucibus lectus blandit euismod.
+* Where are you from?
+I was born and raised in Mexico City.
 
+<<<<<<< HEAD
 Open your eyes,
 Look up to the skies and see,
 I'm just a poor boy, I need no sympathy,
@@ -23,3 +26,31 @@ As if nothing really matters
 Too late, my time has come
 Sends shivers down my spine
 Body's aching…
+=======
+* What do you do?
+I'm a Civil Engineer and I have a Master in Planning. Currently I'm a partner in a Consulting Firm that focuses on Energy Projects, and also we starting-up a Brewery and Mezcal Distribution Company.
+
+* Do you have previous experience with technology/data?
+I have experience in project evaluation, but more focused to finance and management. All my career I've worked with simple databases and excel models, but I don't work with any other specialized tool.
+
+# Why am I here
+I want to gain a new skill. I know data analytics and data science will enhance my endeavors and I hope to apply it as soon as possible,
+
+* What has brought you to Ironhack?
+I researched in the internet, and learn about Ironhack. It`s teaching model adjusts well to my schedule, and I have heard every student has benefited from it.
+
+* What knowledge/skills do you expect to learn in this bootcamp?
+Python, Database Analytics Software and most of all, modelling and predicting with powerfull tools.
+
+# What will I do after the bootcamp?
+Keep working on my businesses.
+
+* Which industry will you seek employment in?
+I'll keep looking for clients/associates in the energy sector, and I will also try to expand the beer/mezcal business. We are also looking to develop something for social evaluations.
+
+* What will your future role look like?
+Try to keep being independent, and meet and collaborate with smart people.
+
+* What is your career goal?
+Work in what I like, and try to keep learning all the time.
+>>>>>>> b3d0ada45c7cf1e3bd67dd13a70fb17f7e1e8322
