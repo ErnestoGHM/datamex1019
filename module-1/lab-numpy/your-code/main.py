@@ -1,69 +1,84 @@
 #1. Import the NUMPY package under the name np.
 
-
+import numpy as np
 
 #2. Print the NUMPY version and the configuration.
 
-
+print(np.version.version)
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 
-
+a = np.random.random((2,3,5))
 
 #4. Print a.
 
-
+print(a)
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
 
-
+b = np.ones((5,3,2))
 
 #6. Print b.
 
-
+print(b)
 
 #7. Do a and b have the same size? How do you prove that in Python code?
 
-
+#True
+print(np.size(a) == np.size(b))
 
 
 #8. Are you able to add a and b? Why or why not?
 
-
+#ValueError: operands could not be broadcast together with shapes (2,3,5) (5,2,3)
+# Necesitan tener las dimensiones en el mismo orden, ya que suman elemento a elemento.
+#print(a+b)
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-
+c = np.transpose(b)
+print(c)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
-
+#Cambié las dimensiones de b para que funcionara, ya que pedía 5X2x3 y tenía que ser 5x3x2.
+#Funciona porque se suma elemento a elemento, y queda una matriz de las mismas dimensiones con valores sumados.
+d = a + c
+print(d)
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
-
-
+print(a)
+print(d)
+#La diferencia es exactamente en 1 en cada elemento, debido a que todos los elementos de c eran 1´s.
 
 #12. Multiply a and c. Assign the result to e.
 
-
+e = np.multiply(a,c)
+print(e)
 
 #13. Does e equal to a? Why or why not?
 
-
-
+print(a == e)
+#Si, porque se multiplica cada elemento de a por 1.
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
+d_max = np.max(d)
+d_min = np.min(d)
+d_mean = np.mean(d)
 
+print(d_max)
+print(d_min)
+print(d_mean)
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-
-
+f = np.empty((2,3,5))
+print(f)
 
 """
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
@@ -75,6 +90,22 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
+for i in range(len(f)):
+    for j in range(len(f[i])):
+        for k in range(len(f[i][j])):
+            if (d[i][j][k] > d_min) and (d[i][j][k] < d_mean):
+                f[i][j][k] = 25
+            elif (d[i][j][k] > d_mean) and (d[i][j][k] < d_max):
+                f[i][j][k] = 75
+            elif d[i][j][k] == d_mean:
+                f[i][j][k] = 50
+            elif d[i][j][k] == d_min:
+                f[i][j][k] = 0
+            elif d[i][j][k] == d_max:
+                f[i][j][k] = 100
+
+        
+print(f)
 
 
 
@@ -98,7 +129,7 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
-
+print(d)
 
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
@@ -112,3 +143,28 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+
+g = np.empty((2,3,5),str)
+
+for i in range(len(g)):
+    for j in range(len(g[i])):
+        for k in range(len(g[i][j])):
+            if (d[i][j][k] > d_min) and (d[i][j][k] < d_mean):
+                g[i][j][k] = 'B'
+            elif (d[i][j][k] > d_mean) and (d[i][j][k] < d_max):
+                g[i][j][k] = 'D'
+            elif d[i][j][k] == d_mean:
+                g[i][j][k] = 'C'
+            elif d[i][j][k] == d_min:
+                g[i][j][k] = 'A'
+            elif d[i][j][k] == d_max:
+                g[i][j][k] = 'E'
+print(g)
+print(d)
+
+
+
+
+
+
+
