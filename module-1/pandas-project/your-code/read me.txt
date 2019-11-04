@@ -1,0 +1,31 @@
+Se importó la base de datos usando Pandas.
+
+Revisando la información se puede identificar que las últimas dos columnas contienen valores "NaN" y columnas "Unnamed". Se infiere que es un error de origen, pero debido a las instrucciones de no eliminar columnas, se mantendrán durante este ejercicio.
+
+Las dimensiones de la DataFrama (df=sharks) es de 5,992 filas por 24 columnas (incluyendo las dos mencionadas en el punto anterior.
+
+Como primer paso se estandarizó el título de las columnas, poniendo guion bajo (_) entre cada palabra y eliminando espacios. Se hizo de manualmente, debido a que solo eran 24 columnas.
+
+Se identificó con value_counts(), que las columnas: 'Case_Number', 'Date', 'Year', 'Type', 'pdf', 'Case_number.1', 'Case_number.2' y 'original_order' no cuentan con valore nulos. De lo anterior se infiere que los casos, respaldados en los pdf, fueron la fuente de información para la construcción de la base de datos.
+
+Se identificó, con value_counts(), cuántos valores nulos tiene cada columna, destacando las de 'Age','Time' y 'Species', que tienen valores nulos en el rango de 2,600 a 3,200, lo cual se acerca al 50% de datos del total. De una vista de 59 datos, de estas tres columnas, no se puede apreciar una correlación, por lo que se considera que todos los datos faltantes obedecen a falta de información en la fuente, y serán rellenados con "NA".
+
+A continuación se identificó que las columnas 'Country', 'Area' y 'Location' se asocian con la ubicación geográfica del ataque, y se considera que si hay filas que no contengan datos en ninguna de las tres, no es relevante para el análisis, por lo que son borradas con el mètodo dropna para subsets, cuando se cumple la condición de NaN para las tres columnas.
+
+Posteriormente se crea un dataframe en el que los 'Country' con valor null se comparan con 'Area' y 'Location', para verificar si se puede obtener el país de dicha información. De 22 datos, se recabó la información de 19, mientras que los otros tres se rellenaron con 'NA'.
+
+De la misma forma, se eliminaron las filas que no contenían ningun dato en las columnas 'Name', 'Sex' y 'Activity', y las demás se rellenaron con 'NA'.
+
+Se creó otro df con los valores nulos de 'Fatal_(Y/N)', comparàndolos con 'Injury' y 'Investigator_or_Source', y de los 15 datos, se pudo recabar información para 7 (Yes o No) y para los ocho restantes se obtuvo que no se relacionaban con ataques de tiburón, por lo que fueron eliminados. Los datos restantes nulos de 'Injury' e 'Investigator_or_Source' fueron rellenados con 'NA'.
+
+Con esto se terminó de llenar la df, dejando sin espacios nulos (solo las últimas dos columnas, que se hubiera borrado de ser posible.
+
+Posteriormente, con value_counts, se revisaron los 'Types', y se identificó que la categoría 'boat' y 'boating' son similares, por lo que se unieron usando el méodo de sustitución de REGEX.
+
+Para las categorías de género 'Sex', se aplicaron funciones lambda y sustituciones directas para que solo se tuvieran tres categorías: 'M', 'F' y 'NA'.
+
+Para las 'Species' se definió la función typew, que buscaba en la columna coincidencias de texto, y arrojando categorías de acuerdo con dichas coincidencias; lamentablemente, màs del 80% de los datos no cuentan con una categoría, y son etiquetados como 'NA'.
+
+Finalmente, para el caso de los países se aplicó una función para dejar el texto en lower case, así como para eliminar caracteres especiales. Se podría haber buscado unificar algunas categorías, sin embargo, màs del 90% de los datos se concentran en las primeras 10 categorías, por lo que lo ideal sería eliminar las columnas, o incorporarlos a una llamada 'Otros'.
+
+
