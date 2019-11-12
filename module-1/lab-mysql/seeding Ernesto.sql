@@ -24,6 +24,5 @@ INSERT INTO invoices VALUES (2,'271135104','22-01-2019','2','2','7');
 
 
 
-Message Jorge MontCass
 
 
