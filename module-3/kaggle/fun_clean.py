@@ -90,6 +90,25 @@ def cleaning(data):
     
     #Zipcode
     data.zipcode = data.zipcode.apply(lambda x : re.findall('^\d+',x)).apply(lambda x : pd.to_numeric(x[0]))
+    
+    #Outliers
+    def outliers(column):
+        times = 0.5
+        iqr = np.percentile(column,75) - np.percentile(column,25)
+        upper = np.percentile(column,75) + times*iqr
+        lower = np.percentile(column,25) - times*iqr
+        return data[(column<lower) | (column>upper)]
+
+    data.drop(outliers(data.number_of_reviews).index, inplace = True)
+    data.drop(outliers(data.review_scores_rating).index, inplace = True)
+    data.drop(outliers(data.amenity_items).index, inplace = True)
+    data.drop(outliers(data.accommodates).index, inplace = True)
+    data.drop(outliers(data.beds).index, inplace = True)
+    data.drop(outliers(data.delta_first).index, inplace = True)
+    data.drop(outliers(data.delta_host).index, inplace = True)
+    data.drop(outliers(data.delta_host).index, inplace = True)
+
+
     return data
 
 def cleaning_sub(data):
