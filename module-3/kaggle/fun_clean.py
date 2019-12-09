@@ -5,6 +5,7 @@ import seaborn as sns
 import numpy as np
 import datetime
 from dateutil.relativedelta import relativedelta
+from sklearn.preprocessing import StandardScaler
 def cleaning(data):
     #Property Type
     luxury = ['Treehouse','Villa','Timeshare','Castle','Tipi','Boat','Loft','Vacation home']
@@ -25,7 +26,11 @@ def cleaning(data):
     data.room_type = data.room_type.apply(lambda x : entire[0] if x == 'Entire home/apt' else x)\
                                            .apply(lambda x : private[0] if x == 'Private room' else x)\
                                            .apply(lambda x : shared[0] if x == 'Shared room' else x)
+    #data.room_type = StandardScaler().fit_transform(data.room_type.values.reshape(-1, 1))
     
+    #Accommodates
+    #data.accommodates = StandardScaler().fit_transform(data.accommodates.values.reshape(-1, 1))
+
     #Amenities
     data.amenities = data.amenities.str.replace('"translation missing: en.hosting_amenity_49"','')\
                                  .str.replace('"translation missing: en.hosting_amenity_50"','').str.split(',')
@@ -64,6 +69,9 @@ def cleaning(data):
     data['delta_last'] = (data.today - pd.to_datetime(data.last_review) )/np.timedelta64(1,'Y')
     data['delta_host'] = (data.today - pd.to_datetime(data.host_since) )/np.timedelta64(1,'Y')
     data.drop(['first_review','host_since','last_review','today'],axis = 1, inplace = True)
+    #data.delta_first = StandardScaler().fit_transform(data.delta_first.values.reshape(-1, 1))
+    #data.delta_last = StandardScaler().fit_transform(data.delta_last.values.reshape(-1, 1))
+    #data.delta_host = StandardScaler().fit_transform(data.delta_host.values.reshape(-1, 1))
     
     #Host Response Rate
     data.host_response_rate = data.host_response_rate.apply(lambda x : float(x.split('%')[0])/100)
@@ -91,22 +99,26 @@ def cleaning(data):
     #Zipcode
     data.zipcode = data.zipcode.apply(lambda x : re.findall('^\d+',x)).apply(lambda x : pd.to_numeric(x[0]))
     
+    #Review_scores_rating
+    #data.review_scores_rating = StandardScaler().fit_transform(data.review_scores_rating.values.reshape(-1, 1))
+
     #Outliers
     def outliers(column):
-        times = 0.5
+        times = 2
         iqr = np.percentile(column,75) - np.percentile(column,25)
-        upper = np.percentile(column,75) + times*iqr
-        lower = np.percentile(column,25) - times*iqr
+        upper = np.percentile(column,75) + 1.5*iqr
+        lower = np.percentile(column,25) - 0.20*iqr
         return data[(column<lower) | (column>upper)]
 
-    data.drop(outliers(data.number_of_reviews).index, inplace = True)
-    data.drop(outliers(data.review_scores_rating).index, inplace = True)
-    data.drop(outliers(data.amenity_items).index, inplace = True)
-    data.drop(outliers(data.accommodates).index, inplace = True)
-    data.drop(outliers(data.beds).index, inplace = True)
-    data.drop(outliers(data.delta_first).index, inplace = True)
-    data.drop(outliers(data.delta_host).index, inplace = True)
-    data.drop(outliers(data.delta_host).index, inplace = True)
+    data.drop(outliers(data.price).index, inplace = True)
+    #data.drop(outliers(data.number_of_reviews).index, inplace = True)
+    #data.drop(outliers(data.review_scores_rating).index, inplace = True)
+    #data.drop(outliers(data.amenity_items).index, inplace = True)
+    #data.drop(outliers(data.accommodates).index, inplace = True)
+    #data.drop(outliers(data.beds).index, inplace = True)
+    #data.drop(outliers(data.delta_first).index, inplace = True)
+    #data.drop(outliers(data.delta_host).index, inplace = True)
+    #data.drop(outliers(data.delta_host).index, inplace = True)
 
 
     return data
