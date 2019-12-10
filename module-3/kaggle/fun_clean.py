@@ -106,8 +106,8 @@ def cleaning(data):
     def outliers(column):
         times = 2
         iqr = np.percentile(column,75) - np.percentile(column,25)
-        upper = np.percentile(column,75) + 1.5*iqr
-        lower = np.percentile(column,25) - 0.20*iqr
+        upper = np.percentile(column,85) #+ 1.73*iqr
+        lower = np.percentile(column,65) #- 0.06*iqr
         return data[(column<lower) | (column>upper)]
 
     data.drop(outliers(data.price).index, inplace = True)
