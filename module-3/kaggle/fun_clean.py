@@ -104,14 +104,14 @@ def cleaning(data):
 
     #Outliers
     def outliers(column):
-        times = 2
+        times = 3
         iqr = np.percentile(column,75) - np.percentile(column,25)
-        upper = np.percentile(column,85) #+ 1.73*iqr
-        lower = np.percentile(column,65) #- 0.06*iqr
+        upper = np.percentile(column,95) #+ times*iqr
+        lower = np.percentile(column,25) #- times*iqr
         return data[(column<lower) | (column>upper)]
 
     data.drop(outliers(data.price).index, inplace = True)
-    #data.drop(outliers(data.number_of_reviews).index, inplace = True)
+    data.drop(outliers(data.number_of_reviews).index, inplace = True)
     #data.drop(outliers(data.review_scores_rating).index, inplace = True)
     #data.drop(outliers(data.amenity_items).index, inplace = True)
     #data.drop(outliers(data.accommodates).index, inplace = True)
